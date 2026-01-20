@@ -1,0 +1,20 @@
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: eureka-0
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://eureka-0.eureka-service.default.svc.cluster.local:8761/eureka
+
+spring:
+  data:
+    mongodb:
+      uri: ${MONGO_DB_URL}
+      host: ${MONGO_DB_HOST}
+      port: 27017
+      database: ${MONGO_DB_NAME}
+      repositories:
+        enabled: true
+
+# eksctl create cluster --name aws-eks-cluster --region us-east-1 --nodegroup-name eks-cluster-node --node-type t3.small --nodes 1
